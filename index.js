@@ -6,7 +6,7 @@ const app = express();
 const port = process.env.PORT || 3000;
 const gifsFolder = path.join(__dirname, "gifs");
 
-app.get("/random", (req, res) => {
+app.get("/random", (res) => {
   fs.readdir(gifsFolder, (err, files) => {
     if (err) {
       res.status(500).send("Erro ao ler a pasta de gifs");
